@@ -742,7 +742,7 @@ function ChartList(props: ChartListProps) {
       addSuccessToast,
       bulkSelectEnabled,
       favoriteStatus,
-      hasPerm,
+      hasPerm,  
       loading,
     ],
   );

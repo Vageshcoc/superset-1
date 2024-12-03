@@ -428,11 +428,12 @@ export const useExploreAdditionalActionsMenu = (
         <Menu.Item key={MENU_KEYS.VIEW_QUERY}>
           <ModalTrigger
             triggerNode={
-              <span data-test="view-query-menu-item">{t('View query')}</span>
+              <span data-test="view-query-menu-item">{t('View Complete query')}</span>
             }
             modalTitle={t('View query')}
             modalBody={
               <ViewQueryModal latestQueryFormData={latestQueryFormData} />
+
             }
             draggable
             resizable

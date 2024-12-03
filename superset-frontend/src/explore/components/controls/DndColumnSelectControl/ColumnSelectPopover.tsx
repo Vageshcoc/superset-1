@@ -64,7 +64,6 @@ const StyledSelect = styled(Select)`
     }
   }
 `;
-
 export interface ColumnSelectPopoverProps {
   columns: ColumnMeta[];
   editedColumn?: ColumnMeta | AdhocColumn;
@@ -78,7 +77,6 @@ export interface ColumnSelectPopoverProps {
   setDatasetModal?: Dispatch<SetStateAction<boolean>>;
   disabledTabs?: Set<string>;
 }
-
 const getInitialColumnValues = (
   editedColumn?: ColumnMeta | AdhocColumn,
 ): [AdhocColumn?, ColumnMeta?, ColumnMeta?] => {
@@ -131,7 +129,7 @@ const ColumnSelectPopover = ({
   );
 
   const sqlEditorRef = useRef(null);
-
+console.log({columns})
   const [calculatedColumns, simpleColumns] = useMemo(
     () =>
       columns?.reduce(

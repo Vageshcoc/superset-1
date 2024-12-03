@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import  React, {useCallback, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -30,9 +30,13 @@ import PropertiesModal from 'src/explore/components/PropertiesModal';
 import { sliceUpdated } from 'src/explore/actions/exploreActions';
 import { PageHeaderWithActions } from 'src/components/PageHeaderWithActions';
 import MetadataBar, { MetadataType } from 'src/components/MetadataBar';
-import { setSaveChartModalVisibility } from 'src/explore/actions/saveModalActions';
+import { setSaveChartModalVisibility,newSetSaveChartModalVisibility } from 'src/explore/actions/saveModalActions';
 import { applyColors, resetColors } from 'src/utils/colorScheme';
 import { useExploreAdditionalActionsMenu } from '../useExploreAdditionalActionsMenu';
+import saveChart from '../saveChart';
+
+
+
 
 const propTypes = {
   actions: PropTypes.object.isRequired,
@@ -132,6 +136,10 @@ export const ExploreChartHeader = ({
     dispatch(setSaveChartModalVisibility(true));
   }, [dispatch]);
 
+  const newShowModal = useCallback(() => {
+    dispatch(newSetSaveChartModalVisibility(true));
+  },[dispatch])
+
   const updateSlice = useCallback(
     slice => {
       dispatch(sliceUpdated(slice));
@@ -203,6 +211,7 @@ export const ExploreChartHeader = ({
     return <MetadataBar items={items} tooltipPlacement="bottom" />;
   }, [metadata, slice?.description]);
 
+  // console.log({menu})
   const oldSliceName = slice?.slice_name;
   return (
     <>
@@ -265,6 +274,16 @@ export const ExploreChartHeader = ({
                 <Icons.SaveOutlined iconSize="l" />
                 {t('Save')}
               </Button>
+              <Button
+                buttonStyle="secondary"
+                onClick={newShowModal}
+                disabled={saveDisabled}
+                data-test="query-save-button"
+                css={saveButtonStyles}
+                >
+                
+                {t('Create New Chart')}
+                </Button>
             </div>
           </Tooltip>
         }
@@ -274,6 +293,50 @@ export const ExploreChartHeader = ({
           onVisibleChange: setIsDropdownVisible,
         }}
       />
+      
+{/* //Changes  */}
+      {/* <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+      
+      <DialogTitle>
+        Create a New Chart
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          style={{ position: 'absolute', right: 8, top: 8 }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
+
+      <DialogContent>
+        <form id="chart-form">
+          <TextField
+            label="Chart Name"
+            fullWidth
+            margin="normal"
+            required
+          />
+          <TextField
+            label="Description"
+            fullWidth
+            margin="normal"
+            required
+          />
+        </form>
+      </DialogContent>
+
+      <DialogActions>
+        <Button onClick={handleReset} color="secondary">
+          Reset
+        </Button>
+        <Button onClick={handleSubmit} color="primary">
+          Submit
+        </Button>
+      </DialogActions>
+    </Dialog> 
+     */}
+{/* Changes */}
+    
       {isPropertiesModalOpen && (
         <PropertiesModal
           show={isPropertiesModalOpen}
@@ -285,6 +348,11 @@ export const ExploreChartHeader = ({
     </>
   );
 };
+
+/*
+
+
+*/
 
 ExploreChartHeader.propTypes = propTypes;
 

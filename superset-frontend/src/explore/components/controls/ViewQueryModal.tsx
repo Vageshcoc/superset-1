@@ -43,7 +43,7 @@ const ViewQueryModalContainer = styled.div`
   flex-direction: column;
 `;
 
-const ViewQueryModal: FC<Props> = props => {
+const ViewQueryModal: FC<Props> = (props:any) => {
   const [result, setResult] = useState<Result[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -72,9 +72,14 @@ const ViewQueryModal: FC<Props> = props => {
         });
       });
   };
+  // console.log("Props:",props)
+
   useEffect(() => {
     loadChartData('query');
   }, [JSON.stringify(props.latestQueryFormData)]);
+  // console.log('Latest Query Form Data:', props.latestQueryFormData?.slice_id || 'No data yet');
+
+  // console.log("Original data:",[JSON.stringify(props.latestQueryFormData)])
 
   if (isLoading) {
     return <Loading />;

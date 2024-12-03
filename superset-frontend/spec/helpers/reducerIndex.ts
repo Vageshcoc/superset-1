@@ -27,6 +27,8 @@ import sliceEntities from 'src/dashboard/reducers/sliceEntities';
 import dashboardLayout from 'src/dashboard/reducers/undoableDashboardLayout';
 import messageToasts from 'src/components/MessageToasts/reducers';
 import saveModal from 'src/explore/reducers/saveModalReducer';
+import saveChart from 'src/explore/reducers/saveChartReducer';
+
 import explore from 'src/explore/reducers/exploreReducer';
 import sqlLab from 'src/SqlLab/reducers/sqlLab';
 import reports from 'src/features/reports/ReportModal/reducer';
@@ -56,6 +58,7 @@ export default {
   messageToasts,
   sliceEntities,
   saveModal,
+  saveChart,
   explore,
   sqlLab,
   localStorageUsageInKilobytes: noopReducer(0),

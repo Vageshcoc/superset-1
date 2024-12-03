@@ -90,7 +90,6 @@ export type ControlPanelsContainerProps = {
   canStopQuery: boolean;
   chartIsStale: boolean;
 };
-
 export type ExpandedControlPanelSectionConfig = Omit<
   ControlPanelSectionConfig,
   'controlSetRows'
@@ -270,7 +269,7 @@ function useResetOnChangeRef(initialValue: () => any, resetOnChangeValue: any) {
 export const ControlPanelsContainer = (props: ControlPanelsContainerProps) => {
   const { colors } = useTheme();
   const pluginContext = useContext(PluginContext);
-
+  // console.log(props.controls.adhoc_filters.columns)
   const prevState = usePrevious(props.exploreState);
   const prevDatasource = usePrevious(props.exploreState.datasource);
   const prevChartStatus = usePrevious(props.chart.chartStatus);
