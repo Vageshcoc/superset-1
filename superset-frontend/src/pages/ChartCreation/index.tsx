@@ -328,7 +328,7 @@ export class ChartCreation extends PureComponent<
         <h3>{t('Create a new chart')}</h3>
         <Steps direction="vertical" size="small">
           <Steps.Step
-            title={<StyledStepTitle>{t('Choose a dataset')}</StyledStepTitle>}
+            title={<StyledStepTitle>{t('Choose your dataset')}</StyledStepTitle>}
             status={this.state.datasource?.value ? 'finish' : 'process'}
             description={
               <StyledStepDescription className="dataset">

@@ -307,6 +307,7 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
   };
 
   useEffect(() => {
+    // console.log("test")
     if (!collapseState && queryData?.length) {
       setActiveState(activeState => [...activeState, '4']);
     }
@@ -370,7 +371,7 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
               ghost
               bigger
             >
-              <Collapse.Panel header={t('Recents')} key="1">
+              <Collapse.Panel header={t('Recent Custom Files')} key="1">
                 {activityData &&
                 (activityData[TableTab.Viewed] ||
                   activityData[TableTab.Other] ||
@@ -387,7 +388,7 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
                   <LoadingCards />
                 )}
               </Collapse.Panel>
-              <Collapse.Panel header={t('Dashboards')} key="2">
+              <Collapse.Panel header={t('Custom Dashboards created')} key="2">
                 {!dashboardData || isRecentActivityLoading ? (
                   <LoadingCards cover={checked} />
                 ) : (
@@ -415,6 +416,7 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
                   />
                 )}
               </Collapse.Panel>
+              
               {canReadSavedQueries && (
                 <Collapse.Panel header={t('Saved queries')} key="4">
                   {!queryData ? (

@@ -48,11 +48,20 @@ export function fetchDashboardsFailed(userId: string) {
   return { type: FETCH_DASHBOARDS_FAILED, userId };
 }
 
+
 export const SET_SAVE_CHART_MODAL_VISIBILITY =
   'SET_SAVE_CHART_MODAL_VISIBILITY';
 export function setSaveChartModalVisibility(isVisible: boolean) {
   return { type: SET_SAVE_CHART_MODAL_VISIBILITY, isVisible };
 }
+
+//CHanged
+export const NEW_SET_SAVE_CHART_MODAL_VISIBILITY =
+  'NEW_SET_SAVE_CHART_MODAL_VISIBILITY';
+export function newSetSaveChartModalVisibility(isVisible: boolean) {
+  return { type: NEW_SET_SAVE_CHART_MODAL_VISIBILITY, isVisible };
+}
+//end
 
 export const SAVE_SLICE_FAILED = 'SAVE_SLICE_FAILED';
 export function saveSliceFailed() {
