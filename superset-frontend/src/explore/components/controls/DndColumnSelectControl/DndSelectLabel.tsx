@@ -96,6 +96,7 @@ export default function DndSelectLabel({
 
   function renderGhostButton() {
     return (
+      <>
       <AddControlLabel
         cancelHover={!props.onClickGhostButton}
         onClick={props.onClickGhostButton}
@@ -103,6 +104,8 @@ export default function DndSelectLabel({
         <Icons.PlusSmall iconColor={theme.colors.grayscale.light1} />
         {t(props.ghostButtonText)}
       </AddControlLabel>
+      
+      </>
     );
   }
 

@@ -138,6 +138,7 @@ function DndColumnSelect(props: DndColumnSelectProps) {
               datasourceWarningMessage={datasourceWarningMessage}
               withCaret={withCaret}
             />
+            
           </ColumnSelectPopoverTrigger>
         );
       }),

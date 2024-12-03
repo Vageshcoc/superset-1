@@ -87,7 +87,6 @@ const ModalTrigger = forwardRef(
     if (ref) {
       ref.current = { close, open, showModal }; // eslint-disable-line
     }
-
     /* eslint-disable jsx-a11y/interactive-supports-focus */
     return (
       <>
@@ -104,6 +103,7 @@ const ModalTrigger = forwardRef(
         {!isButton && (
           <span data-test="span-modal-trigger" onClick={open} role="button">
             {triggerNode}
+            
           </span>
         )}
         <Modal

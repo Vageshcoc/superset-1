@@ -220,6 +220,7 @@ export function Menu({
     Dashboard = '/dashboard',
     Chart = '/chart',
     Datasets = '/tablemodelview',
+    Map = '/map'
   }
 
   const defaultTabSelection: string[] = [];

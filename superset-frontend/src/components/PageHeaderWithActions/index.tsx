@@ -137,6 +137,7 @@ export const PageHeaderWithActions = ({
   tooltipProps,
 }: PageHeaderWithActionsProps) => {
   const theme = useTheme();
+  // console.log({menuDropdownProps})
   return (
     <div css={headerStyles} className="header-with-actions">
       <div className="title-panel">

@@ -51,6 +51,7 @@ export default function Option({
   );
   return (
     <OptionControlContainer data-test="option-label" withCaret={withCaret}>
+      {/* console.log("Close",{children}) */}
       {canDelete && (
         <CloseContainer
           role="button"

@@ -456,6 +456,7 @@ export default function VizTypeGallery(props: VizTypeGalleryProps) {
           nativeFilterGate(value.behaviors || []) && !value.deprecated,
       )
       .sort((a, b) => a.value.name.localeCompare(b.value.name));
+      console.log("Result:",result)
     return result;
   }, [mountedPluginMetadata, denyList]);
 
@@ -468,6 +469,8 @@ export default function VizTypeGallery(props: VizTypeGalleryProps) {
       }
       result[category].push(entry);
     });
+    console.log("Result 2:",result)
+
     return result;
   }, [chartMetadata]);
 

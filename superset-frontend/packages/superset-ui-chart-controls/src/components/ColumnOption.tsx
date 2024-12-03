@@ -77,6 +77,7 @@ export function ColumnOption({
             <ColumnTypeLabel type={type} />
           </span>
         </Tooltip>
+        
       )}
       <Tooltip id="metric-name-tooltip" title={tooltipText}>
         <span
@@ -89,6 +90,7 @@ export function ColumnOption({
           {getColumnLabelText(column)}
         </span>
       </Tooltip>
+      
       {hasExpression && <SQLPopover sqlExpression={expression} />}
       {column.is_certified && (
         <CertifiedIconWithTooltip

@@ -53,6 +53,7 @@ const DetailsPanelPopover = ({
   popoverTriggerRef,
   setPopoverVisible,
 }: DetailsPanelProps) => {
+  console.log({children})
   const activeTabs = useSelector<RootState>(
     state => state.dashboardState?.activeTabs,
   );
@@ -129,6 +130,7 @@ const DetailsPanelPopover = ({
       onKeyDown={handleKeyDown}
       role="menu"
     >
+
       <Global
         styles={theme => css`
           .filterStatusPopover {
@@ -221,7 +223,6 @@ const DetailsPanelPopover = ({
       </div>
     </FiltersDetailsContainer>
   );
-
   return (
     <Popover
       overlayClassName="filterStatusPopover"

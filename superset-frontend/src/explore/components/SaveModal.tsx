@@ -160,6 +160,8 @@ class SaveModal extends Component<SaveModalProps, SaveModalState> {
     this.props.dispatch(setSaveChartModalVisibility(false));
   }
 
+
+
   handleRedirect = (windowLocationSearch: string, chart: any) => {
     const searchParams = new URLSearchParams(windowLocationSearch);
     searchParams.set('save_action', this.state.action);

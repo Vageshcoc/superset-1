@@ -141,6 +141,7 @@ export default function OptionWrapper(
     return (
       <Tooltip title={tooltipTitle || label}>
         <span>{label}</span>
+        {/* console.log("Label") */}
       </Tooltip>
     );
   };
@@ -176,11 +177,12 @@ export default function OptionWrapper(
     }
     return null;
   };
-
+// console.log("Hi vagesh")
   drag(drop(ref));
 
   return (
     <DragContainer ref={ref} {...rest}>
+      {/* console.log("Hi") */}
       <Option
         index={index}
         clickClose={clickClose}
